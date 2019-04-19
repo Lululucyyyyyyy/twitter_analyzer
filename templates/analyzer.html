@@ -2,21 +2,40 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  	<meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+  	<title>The HTML5 Herald</title>
+  	<meta name="description" content="The HTML5 Herald">
+  	<meta name="author" content="SitePoint">
 
-  <link rel="stylesheet" href="static/styles.css">
+  	<link rel="stylesheet" href="static/styles.css">
 
+	<link href="https://fonts.googleapis.com/comss?family=Roboto|Shadows+Into+Light+Two" rel="stylesheet">
 </head>
 
 <body>
-	<form method="GET">
-		<input name="text">
-		<button type="submit" class="btn btn-light text-primary btn-block" style="margin : 20px 20px -10px 0px">Send Message</button>
-	</form>
-	{{ my_text }}
+	<div class="title-head">
+		<h1> Tweet Sentiment Analyzer</h1>
+	</div>
+
+	<center>
+		<form method="GET">
+			<input type="text" name="text">
+			<button type="submit" class="button">
+				See Sentiment
+			</button>
+		</form>
+	</center>
+
+	<div class="display">
+		<center>
+			{% if text != null %}
+				<h3> positive: </h3> {{pos}} <br>
+				<h3> negative: </h3> {{neg}} <br>
+				<h3> relevant tweets: </h3> {{tweets}} <br>
+			{% endif %}
+		</center>
+	</div>
+	
 </body>
 </html>
